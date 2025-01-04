@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import AboutUs from "@/components/about-us";
 import Albums from "@/components/albums";
 import ContactUs from "@/components/contact-us";
