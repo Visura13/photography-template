@@ -34,7 +34,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <div className="flex-shrink-0 flex-1">
+          <div className="flex-shrink-0 flex-1 pl-1 sm:pl-0">
             <Link href="/" className="text-xl font-semibold text-white">
               Logo
             </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
                   className="text-white p-0"
                   aria-label="Toggle menu"
                 >
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-7 w-7" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">

@@ -23,7 +23,8 @@ export const navLinks = ['About', 'Services', 'Work', 'Testimonials',]
 
 export const heroImages = [
     "/hero1.jpg",
-    "/parallax1.jpg",
+    "/parallax7.jpg",
+    "/parallax8.jpg",
   ];
 
 export const aboutUsPara = "Welcome to [Your Website Name], where every click tells a story! We are passionate photographers dedicated to capturing life's most cherished moments and turning them into timeless memories. Whether it's a dreamy wedding, a lively event, a heartwarming family portrait, or the simple beauty of nature, our lens seeks to preserve the emotions and essence of every scene. Our creative team combines technical expertise with artistic vision to deliver stunning visuals that resonate with your heart. With a commitment to quality and a personalized approach, we ensure that every project reflects your unique story and style. Let us frame your moments, one snapshot at a time."

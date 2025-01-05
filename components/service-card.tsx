@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { Card } from "@/components/ui/card"
 import { motion } from 'framer-motion'
-import Image from "next/image"
 import { useEffect, useState } from 'react'
 
 interface ServiceCardProps {
@@ -31,10 +31,9 @@ export function ServiceCard({ service, isInView }: ServiceCardProps) {
       className="hover:z-10"
     >
       <Card className="rounded-none w-full min-w-80 max-w-sm overflow-hidden relative h-80 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md cursor-pointer hover:shadow-2xl">
-        <Image
+        <img
           alt={service.title + ' image'}
           className="object-cover"
-          fill
           src={service.image}
         />
         <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4">

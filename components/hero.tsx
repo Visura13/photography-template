@@ -46,7 +46,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl text-4xl font-serif text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          className="max-w-3xl font-serif text-white text-5xl md:text-6xl lg:text-7xl"
         >
             Modern Art
           <br />
@@ -75,13 +75,13 @@ const Hero = () => {
       {/* Navigation Arrows */}
       <button
         onClick={handlePrevImage}
-        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-zinc-200 p-3 rounded-full hover:bg-black/70 transition"
+        className="absolute left-2 sm:left-4 top-[47%] sm:top-1/2 transform -translate-y-1/2 text-zinc-200 p-3 rounded-full hover:bg-black/70 transition"
       >
         <ChevronLeft /> 
       </button>
       <button
         onClick={handleNextImage}
-        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-zinc-200 p-3 rounded-full hover:bg-black/70 transition"
+        className="absolute right-2 sm:right-4 top-[47%] sm:top-1/2 transform -translate-y-1/2 text-zinc-200 p-3 rounded-full hover:bg-black/70 transition"
       >
         <ChevronRight />
       </button>

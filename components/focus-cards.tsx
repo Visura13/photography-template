@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import React from "react";
 
 export const Card = React.memo(
@@ -34,10 +34,9 @@ export const Card = React.memo(
           isAnyCardHovered && !isCurrentCardHovered && "blur-sm scale-[0.98]"
         )}
       >
-        <Image
+        <img
           src={card}
           alt={card}
-          fill
           className="object-cover absolute inset-0"
         />
         <div
