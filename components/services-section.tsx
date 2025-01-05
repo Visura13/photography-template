@@ -25,7 +25,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.75, delay:0.5 }}
-          className="h-1 w-24 bg-blue-950 mb-12 mx-auto" 
+          className="h-1 w-24 bg-gray-900 mb-12 mx-auto" 
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mx-auto">
           {services.map((service, index) => (

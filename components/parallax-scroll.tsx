@@ -37,11 +37,11 @@ export const ParallaxScroll = ({
   return (
     <div
       //h-[40rem] overflow-y-auto
-      className={cn("overflow-hidden items-start max-w-6xl mx-auto shadow-lg", className)}
+      className={cn("bg-[#FAF9F6] overflow-hidden items-start max-w-6xl mx-auto shadow-lg sm:pb-20", className)}
       ref={gridRef}
     >
       <div
-        className="bg-[#FAF9F6] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start w-full mx-auto gap-10 pt-28 -mb-24 sm:mb-0 sm:pt-0 md:py-24 px-4 md:px-10"
+        className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start w-full mx-auto gap-10 pt-28 -mb-24 sm:mb-0 sm:pt-0 md:py-24 px-4 md:px-10"
         ref={gridRef}
       >
         <div className="grid gap-10">

@@ -32,7 +32,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section ref={ref} id="testimonials" className="max-w-6xl mx-auto mt-20">
+    <section ref={ref} id="testimonials" className="max-w-6xl mx-auto mt-20 px-4 sm:px-0">
       <div className="container mx-auto">
         {/* Section Title */}
         <motion.h2 
@@ -47,7 +47,7 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.75, delay:0.5 }}
-          className="h-1 w-24 bg-blue-950 mb-12 mx-auto" 
+          className="h-1 w-24 bg-gray-900 mb-12 mx-auto" 
         />
 
         {/* Testimonial Display */}
