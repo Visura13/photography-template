@@ -9,9 +9,9 @@ const AboutUs = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
   return (
-    <section ref={ref} className="py-10 px-5" id="About">
+    <section ref={ref} className="pt-12 pb-10 px-5" id="About">
       <motion.h2 
-          className="text-5xl font-semibold tracking-tighter text-center"
+          className="text-5xl text-[#232323] font-semibold tracking-tighter text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.75, delay:0.3 }}

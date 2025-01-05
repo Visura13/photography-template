@@ -33,10 +33,10 @@ const Testimonials = () => {
 
   return (
     <section ref={ref} id="testimonials" className="max-w-6xl mx-auto mt-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         {/* Section Title */}
         <motion.h2 
-          className="text-5xl font-semibold tracking-tighter text-center"
+          className="text-5xl text-[#232323] font-semibold tracking-tighter text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.75, delay:0.3 }}
@@ -51,7 +51,7 @@ const Testimonials = () => {
         />
 
         {/* Testimonial Display */}
-        <div className="bg-white shadow-lg relative text-center py-8 px-8 md:px-32 min-h-[540px] md:min-h-96">
+        <div className="bg-[#FAF9F6] shadow-lg relative text-center py-8 px-8 md:px-32 min-h-[540px] md:min-h-96">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={testimonials[currentIndex].image}

@@ -10,9 +10,9 @@ export default function ContactInfo() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
   
   return (
-    <section ref={ref} id='contact' className='py-20 px-4'>
+    <section ref={ref} id='contact' className='py-20'>
       <motion.h2 
-        className="text-5xl font-semibold tracking-tighter text-center"
+        className="text-5xl text-[#232323] font-semibold tracking-tighter text-center"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.75, delay:0.3 }}
@@ -25,7 +25,7 @@ export default function ContactInfo() {
         transition={{ duration: 0.75, delay:0.5 }}
         className="h-1 w-24 bg-blue-950 mb-12 mx-auto" 
       />
-      <div className="bg-background text-foreground shadow-lg overflow-hidden max-w-6xl mx-auto">
+      <div className="bg-[#FAF9F6] text-foreground shadow-lg overflow-hidden max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 p-8">
             <p className='mb-6'>

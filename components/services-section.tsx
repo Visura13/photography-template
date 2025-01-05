@@ -14,12 +14,12 @@ export default function Services() {
     <section ref={ref} id="Services" className="w-full max-w-7xl mx-auto pt-12 pb-20">
       <div className="container px-4 md:px-6 mx-auto">
         <motion.h2 
-          className="text-5xl font-semibold tracking-tighter text-center"
+          className="text-5xl text-[#232323] font-semibold tracking-tighter text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.75, delay:0.3 }}
         >
-          Our Services
+          Our Services.
         </motion.h2>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

@@ -33,11 +33,11 @@ export function ServiceCard({ service, isInView }: ServiceCardProps) {
       <Card className="rounded-none w-full min-w-80 max-w-sm overflow-hidden relative h-80 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md cursor-pointer hover:shadow-2xl">
         <img
           alt={service.title + ' image'}
-          className="object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
           src={service.image}
         />
-        <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
-          <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+        <div className="absolute bottom-0 left-0 right-0 bg-[#FAF9F6] p-4">
+          <h3 className="text-xl font-semibold text-black">{service.title}</h3>
         </div>
       </Card>
     </motion.div>

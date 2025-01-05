@@ -58,8 +58,8 @@ const Navbar = () => {
 
           {/* Sign Up Button and Avatar */}
           <div className="hidden md:flex items-center gap-3 flex-1 justify-end">
-          <Button asChild size="lg" variant="outline" className="text-white bg-transparent hover:bg-white/10 hover:text-white rounded-none">
-            <Link href="#Consultation">Contact Us</Link>
+          <Button asChild variant="outline" className="text-white bg-transparent hover:bg-white/10 hover:text-white rounded-none p-5">
+            <Link href="#contact">Contact Us</Link>
           </Button> 
 
           </div>

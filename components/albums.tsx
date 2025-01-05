@@ -10,7 +10,7 @@ const Albums = () => {
   return (
     <section ref={ref} id="work" className="my-12 mx-4">
       <motion.h2 
-          className="text-center text-5xl font-semibold tracking-tight"
+          className="text-center text-[#232323] text-5xl font-semibold tracking-tight"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.75, delay:0.3 }}
