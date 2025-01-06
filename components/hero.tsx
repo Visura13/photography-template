@@ -66,8 +66,11 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="flex flex-col mt-6 sm:flex-row gap-4"
         >
-          <Button asChild size="lg" variant="outline" className="text-white bg-transparent hover:bg-white/10 hover:text-white rounded-none">
-            <Link href="#Consultation">Contact Us</Link>
+          <Button asChild size="lg" variant="outline" className="md:hidden text-white bg-transparent hover:bg-white/10 hover:text-white rounded-none">
+            <Link href="#Services">Contact Us</Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="hidden md:flex text-black bg-white/90 hover:bg-white/10 hover:text-white rounded-none">
+            <Link href="#Services">Our Services</Link>
           </Button>
         </motion.div>
       </div>

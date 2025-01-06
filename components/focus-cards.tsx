@@ -85,7 +85,7 @@ export const Card = React.memo(
             isCurrentCardHovered ? "opacity-100" : "opacity-0"
           )}
         >
-          <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
+          <div className="text-xl md:text-2xl font-medium text-white sm:bg-clip-text sm:text-transparent sm:bg-gradient-to-b sm:from-neutral-50 sm:to-neutral-200">
             Dilusha & Udara
           </div>
         </div>
