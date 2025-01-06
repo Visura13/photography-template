@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <h3 className="text-xl font-bold mb-2">John Doe Photography</h3>
+            <h3 className="text-xl font-bold mb-2 text-center">John Doe Photography</h3>
             <p className="text-sm text-gray-400">Capturing moments, creating memories</p>
           </div>
           <div className="flex flex-col md:flex-row md:items-center">
