@@ -6,7 +6,7 @@ import { useRef } from "react"
 
 const Albums = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const isInView = useInView(ref, { once: true, amount: 0 })
   return (
     <section ref={ref} id="work" className="my-12 mx-4">
       <motion.h2 

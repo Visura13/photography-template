@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export const Card = React.memo(
   ({
@@ -18,12 +17,38 @@ export const Card = React.memo(
     setHovered: React.Dispatch<React.SetStateAction<{ globalIndex: number | null; columnIndex: number | null }>>;
     totalColumns: number;
   }) => {
-    const isCurrentCardHovered = 
-      hovered.globalIndex === index;
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && window.innerWidth <= 768) {
+              setHovered({ 
+                globalIndex: index, 
+                columnIndex: Math.floor(index / Math.ceil(totalColumns)) 
+              });
+            } else if (window.innerWidth <= 768) {
+              setHovered({ globalIndex: null, columnIndex: null });
+            }
+          });
+        },
+        { threshold: 0.7 }
+      );
+
+      if (cardRef.current) {
+        observer.observe(cardRef.current);
+      }
+
+      return () => observer.disconnect();
+    }, [index, setHovered, totalColumns]);
+
+    const isCurrentCardHovered = hovered.globalIndex === index;
     const isAnyCardHovered = hovered.globalIndex !== null;
 
     return (
       <div
+        ref={cardRef}
         onMouseEnter={() => setHovered({ 
           globalIndex: index, 
           columnIndex: Math.floor(index / Math.ceil(totalColumns)) 
@@ -37,7 +62,7 @@ export const Card = React.memo(
         <img
           src={card}
           alt={card}
-          className="object-cover absolute inset-0  w-full h-full"
+          className="object-cover absolute inset-0 w-full h-full"
         />
         <div
           className={cn(
