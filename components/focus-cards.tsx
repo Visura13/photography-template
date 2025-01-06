@@ -55,7 +55,7 @@ export const Card = React.memo(
         })}
         onMouseLeave={() => setHovered({ globalIndex: null, columnIndex: null })}
         className={cn(
-          "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out cursor-pointer",
+          "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-96 w-full transition-all duration-300 ease-out cursor-pointer",
           isAnyCardHovered && !isCurrentCardHovered && "blur-sm scale-[0.98]"
         )}
       >
