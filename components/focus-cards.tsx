@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 export const Card = React.memo(
   ({
@@ -18,30 +19,44 @@ export const Card = React.memo(
     totalColumns: number;
   }) => {
     const cardRef = useRef<HTMLDivElement>(null);
+    const timeoutRef = useRef<NodeJS.Timeout>();
+
+    const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      timeoutRef.current = setTimeout(() => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && window.innerWidth <= 768) {
+            setHovered({ 
+              globalIndex: index, 
+              columnIndex: Math.floor(index / Math.ceil(totalColumns)) 
+            });
+          } else if (window.innerWidth <= 768) {
+            setHovered({ globalIndex: null, columnIndex: null });
+          }
+        });
+      }, 100);
+    }, [index, setHovered, totalColumns]);
 
     useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && window.innerWidth <= 768) {
-              setHovered({ 
-                globalIndex: index, 
-                columnIndex: Math.floor(index / Math.ceil(totalColumns)) 
-              });
-            } else if (window.innerWidth <= 768) {
-              setHovered({ globalIndex: null, columnIndex: null });
-            }
-          });
-        },
-        { threshold: 1 }
-      );
+      const observer = new IntersectionObserver(handleIntersection, { 
+        threshold: 1.0,
+        rootMargin: '0px'
+      });
 
       if (cardRef.current) {
         observer.observe(cardRef.current);
       }
 
-      return () => observer.disconnect();
-    }, [index, setHovered, totalColumns]);
+      return () => {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+        observer.disconnect();
+      };
+    }, [handleIntersection]);
 
     const isCurrentCardHovered = hovered.globalIndex === index;
     const isAnyCardHovered = hovered.globalIndex !== null;
@@ -70,7 +85,7 @@ export const Card = React.memo(
             isCurrentCardHovered ? "opacity-100" : "opacity-0"
           )}
         >
-          <div className="text-xl md:text-2xl font-medium text-white sm:bg-clip-text sm:text-transparent sm:bg-gradient-to-b sm:from-neutral-50 sm:to-neutral-200">
+          <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
             Dilusha & Udara
           </div>
         </div>

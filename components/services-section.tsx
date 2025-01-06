@@ -29,7 +29,7 @@ export default function Services() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mx-auto">
           {services.map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} isInView={isInView} />
+            <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
       </div>

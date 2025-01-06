@@ -2,8 +2,8 @@
 'use client'
 
 import { Card } from "@/components/ui/card"
-import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
 interface ServiceCardProps {
   service: {
@@ -11,10 +11,11 @@ interface ServiceCardProps {
     image: string
   }
   index: number
-  isInView: boolean
 }
 
-export function ServiceCard({ service, isInView }: ServiceCardProps) {
+export function ServiceCard({ service, }: ServiceCardProps) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export function ServiceCard({ service, isInView }: ServiceCardProps) {
 
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.75, delay: 0.7 }}
