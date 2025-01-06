@@ -32,7 +32,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section ref={ref} id="testimonials" className="max-w-6xl mx-auto mt-20 px-4 sm:px-0">
+    <section ref={ref} id="testimonials" className="max-w-6xl mx-auto mt-24 px-4 sm:px-0">
       <div className="container mx-auto">
         {/* Section Title */}
         <motion.h2 

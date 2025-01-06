@@ -10,7 +10,7 @@ export default function ContactInfo() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
   
   return (
-    <section ref={ref} id='contact' className='py-20 px-4 sm:px-0'>
+    <section ref={ref} id='contact' className='py-24 px-4 sm:px-0'>
       <motion.h2 
         className="text-5xl text-[#232323] font-semibold tracking-tighter text-center"
         initial={{ opacity: 0, y: 30 }}
